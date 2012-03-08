@@ -1,0 +1,250 @@
+html { 
+    background-color: black; 
+}
+body { 
+    -webkit-backface-visibility: hidden;
+    width: 1024px !important;
+    height: 768px !important;
+    margin-left: -512px !important; 
+    margin-top: -384px !important;
+    
+    background-color: #272822;
+    color: #F8F8F2;
+}
+/* A section is a slide. It's size is 1024x768, and this will never change */
+section {
+    font-family: 'Helvetica Neue',helvetica, arial, serif;
+    font-size: 35px;
+    overflow: hidden;
+}
+h1 {
+    font-family: helvetica, arial, serif;
+    margin-top: 200px;
+    text-align: center;
+    font-size: 150px;
+    color: #a6e22e;
+    text-shadow: 0px 0px 0 rgb(108,168,-12),1px 1px 0 rgb(85,145,-35),2px 2px 0 rgb(61,121,-59),3px 3px 0 rgb(38,98,-82),4px 4px 0 rgb(14,74,-106),5px 5px 0 rgb(-9,51,-129),6px 6px 0 rgb(-33,27,-153), 7px 7px 0 rgb(-57,3,-177),8px 8px 7px rgba(0,0,0,0.7),8px 8px 1px rgba(0,0,0,0.5),0px 0px 7px rgba(0,0,0,.2);
+}
+h2 {
+    font-family: 'Oswald', arial, serif;
+    margin-top: 300px;
+    text-align: center;
+    font-size: 80px;
+    color: #a6e22e;
+}
+h3 {
+    font-family: 'Oswald', arial, serif;
+    margin: 100px;
+    color: #E6DB74;
+}
+
+ul {
+    margin: 0px 100px 50px;
+}
+ul li {
+    margin-bottom: 10px;
+}
+
+q {
+    display: inline-block;
+    width: 700px;
+    height: 600px;
+    background-color: black;
+    color: white;
+    font-size: 60px;
+    padding: 50px;
+}
+
+img, video {
+    width: 1024px;
+    height: 768px;
+    position: absolute;
+    top: 0;
+    background-color: black;
+    z-index: -1;
+}
+
+.iframe iframe {
+    position: absolute;
+    width: 1244px;
+    height: 768px;
+}
+
+footer {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+}
+
+/* Transition effect */
+/* Feel free to change the transition effect for original
+   animations. See here:
+   https://developer.mozilla.org/en/CSS/CSS_transitions
+   How to use CSS3 Transitions: */
+section {
+    -moz-transition: left 400ms linear 0s;
+    -webkit-transition: left 400ms linear 0s;
+    -ms-transition: left 400ms linear 0s;
+    transition: left 400ms linear 0s;
+}
+
+/* Before */
+section { left: -150%; }
+/* Now */
+section[aria-selected] { left: 0; }
+/* After */
+section[aria-selected] ~ section { left: +150%; }
+
+/* Incremental elements */
+
+/* By default, visible */
+.incremental > * { opacity: 1; }
+
+/* The current item */
+.incremental > *[aria-selected] { color: red; opacity: 1; }
+
+/* The items to-be-selected */
+.incremental > *[aria-selected] ~ * { opacity: 0.2; }
+
+pre {
+    font-size: 23px;
+    border: none;
+    margin: 0px 100px 50px;
+}
+.CodeMirror {
+    font-size: 23px;
+}
+.activeline {
+    background: rgba(0,0,0,0.1) !important;
+}
+
+.layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+a {
+    color: rgb(166, 226, 46);
+    text-decoration: none;
+}
+a:hover,
+a:focus {
+    color: #E6DB74;
+    border-bottom: 1px solid #E6DB74;
+}
+
+.button {
+    font-size: 20px;
+    padding: 4px 10px;
+    background-color: rgba(166, 226, 46,0.2);
+    color: rgb(166, 226, 46);
+    border-radius: 4px;
+    text-decoration: none;
+}
+.button:hover,
+.button:focus {
+    background-color: rgba(166, 226, 46,0.4);
+    color: rgb(166, 226, 46);
+    border: none;
+}
+
+#slide-title h2,
+#slide-end h2 {
+    font-family: 'Helvetica Neue',helvetica, arial, serif;
+    font-size: 50px;
+    font-weight: normal;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    color: #E6DB74;
+}
+#slide-title .row {
+    display: table-row;
+}
+#slide-title .col1,
+#slide-title .col2,
+#slide-title .col3 {
+    width: 341px;
+    display: table-cell; 
+    vertical-align: middle;
+    height: 200px;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-family: 'HelveticaNeue-Light', 'Helvetica Neue',helvetica, arial, serif;
+}
+#slide-title .col1 {
+    text-align: right;
+}
+#slide-title .col2 {
+    text-align: center;
+}
+
+#slide-ted-code {
+    background-color: #272822;
+    color: #F8F8F2;
+}
+#slide-ted-code h3 {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+#slide-ted-code .right {
+    text-align: right;
+    padding-right: 10px;
+}
+#slide-ted-code .CodeMirror-scroll {
+    height: 560px;
+}
+#slide-ted-code div.solution {
+    display: none;
+}
+
+/* TED visualization */
+#slide-ted-demo {
+    background-color: #fff;
+    color: #000;
+}
+#slide-ted-demo svg .title {
+    font: 300 78px Helvetica Neue;
+    fill: #666;
+}
+#slide-ted-demo svg circle {
+    fill: rgba(65,131,196,0.2);
+    stroke-width: 1;
+    stroke: rgba(65,131,196,1);
+}
+#slide-ted-demo svg .axis path {
+    fill: none;
+    stroke: #999;
+    stroke-width: 1;
+}
+#slide-ted-demo svg .axis text {
+    font: 20px sans-serif;
+    color: #000;
+}
+
+#slide-demo-line,
+#slide-demo-parallel,
+#slide-demo-force,
+#slide-demo-choropleth,
+#slide-demo-showreel,
+#slide-demo-cluster {
+    background-color: #fff;
+}
+#slide-demo-showreel iframe {
+    top: 10px;
+    left: -220px;
+}
+#slide-demo-line iframe {
+    top: 150px;
+    left: 230px;
+}
+#slide-demo-parallel iframe {
+    top: 100px;
+    left: 30px;
+}
+#slide-demo-choropleth iframe {
+    top: 100px;
+    left: 20px;
+}
